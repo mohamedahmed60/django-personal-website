@@ -30,10 +30,17 @@
 					        <img class="img-fluid post-thumb " src="{{post.image.url}}" alt="image">
 					    </div>
 					    <div class="col">
-						    <h3 class="title mb-1"><a class="text-link" href="{% url 'blog:post_detail' post.id %}">{{post}}</a></h3>
-						    <div class="meta mb-1"><span class="date">Published 2 days ago</span><span class="time">5 min read</span><span class="comment"><a class="text-link" href="#">8 comments</a></span></div>
-						    <div class="intro">{{post.content|safe|truncatewords:30}}</div>
-						    <a class="text-link" href="{% url 'blog:post_detail' post.id %}">Read more &rarr;</a>
+						    <h3 class="title mb-1">
+								<a class="text-link" href="{% url 'blog:post_detail' post.id %}">{{post}}</a>
+							</h3>
+						    <div class="meta mb-1"><span class="date">{{post.publish_data}}</span>
+								<span class="time">5 min read</span>
+								<span class="comment">
+									<a class="text-link" href="#">8 comments</a>
+								</span>
+							</div>
+						    <div class="intro">{{post.content|safe|truncatewords:40}}</div>
+						    <a class="text-link" href="{% url 'blog:post_detail' post.id %} ">Read more &rarr;</a>
 					    </div><!--//col-->
 				    </div><!--//row-->
 			    </div><!--//item-->
