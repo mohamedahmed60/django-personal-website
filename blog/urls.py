@@ -4,8 +4,8 @@ from .views import all_posts , post_detail , PostList , PostDetail
 app_name = 'blog'
 
 urlpatterns = [
-    path('',all_posts),
-    path('<int:id>', post_detail,name='post_detail'),
+    path('', all_posts),
+    path('<int:id>', post_detail,name='postdetail'),
 
     path('cbv/', PostList.as_view()),
     path('cbv/<int:pk>', PostDetail.as_view()),  # <int:pk>  نستخدم ال  <int:id>  بدل مااسمه
